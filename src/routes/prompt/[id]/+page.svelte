@@ -1,6 +1,8 @@
 <script lang="ts">
+    import { base } from "$app/paths";
     export let data;
     const { prompt } = data;
+    const imagePath = `${base}${prompt.resultUrl}`;
 </script>
 
 <svelte:head>
@@ -37,7 +39,7 @@
 
     {#if prompt.type === "image" && prompt.resultUrl}
         <img
-            src={prompt.resultUrl}
+            src={imagePath}
             alt={prompt.title}
             class="rounded-xl shadow mb-6"
         />

@@ -1,12 +1,14 @@
 <script>
+  import { base } from "$app/paths";
   export let data;
+  const imagePath = `${base}${data.resultUrl}`;
 </script>
 
 <div
   class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition flex flex-col justify-between"
 >
   {#if data.type === "image" && data.resultUrl}
-    <img src={data.resultUrl} alt={data.title} class="rounded-lg mb-2" />
+    <img src={imagePath} alt={data.title} class="rounded-lg mb-2" />
   {/if}
 
   <a href={`/prompt/${data.id}`} class="block">
