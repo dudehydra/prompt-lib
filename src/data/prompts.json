@@ -1,0 +1,146 @@
+[
+    {
+        "id": "1",
+        "title": "Anime Cafe",
+        "prompt": "A cozy Japanese anime-style cafe at sunset with warm lighting and paper lanterns.",
+        "model": "Midjourney",
+        "type": "image",
+        "tags": [
+            "anime",
+            "cafe",
+            "cozy"
+        ],
+        "resultUrl": "/src/public/images/cafe.jpg",
+        "deeplink": "https://midjourney.com/app"
+    },
+    {
+        "id": "2",
+        "title": "Письмо HR с извинением",
+        "prompt": "Составь вежливое письмо HR с извинением за поздний ответ на предложение о работе.",
+        "model": "GPT-4",
+        "type": "text",
+        "tags": [
+            "hr",
+            "работа",
+            "вежливость"
+        ],
+        "resultText": "Здравствуйте, [Имя HR-менеджера]!\n\nПрошу прощения за задержку с ответом и благодарю вас за предложение, а также за проявленный интерес к моей кандидатуре.\n\nЯ внимательно ознакомился с предложением и хотел бы подтвердить свою заинтересованность в позиции. \n\nЕще раз приношу извинения за поздний отклик. Благодарю за понимание.\n\nС уважением,\n[Ваше имя]",
+        "resultUrl": "",
+        "deeplink": "https://chat.openai.com/chat?model=gpt-4"
+    },
+    {
+        "id": "3",
+        "title": "План тренировок для начинающих",
+        "prompt": "Создай простой план тренировок в зале на 3 дня в неделю для начинающих.",
+        "resultText": "План тренировок для начинающих (3 дня в неделю):\n\nДень 1 – Полное тело:\n- Разминка: 5–10 минут ходьбы или лёгкий бег\n- Приседания – 3 подхода по 12 повторений\n- Отжимания (с колен, если сложно) – 3x10\n- Планка – 3 подхода по 20–30 секунд\n- Подъёмы корпуса на пресс – 3x15\n\nДень 2 – Отдых или активная прогулка\n\nДень 3 – Верх тела:\n- Разминка\n- Жим гантелей лёжа или отжимания – 3x10\n- Тяга гантели в наклоне – 3x12 (на каждую руку)\n- Подъёмы гантелей на бицепс – 3x12\n- Планка с подъёмом ноги – 3 подхода по 20 секунд на каждую сторону\n\nДень 4 – Отдых или йога/растяжка\n\nДень 5 – Ноги и кардио:\n- Разминка\n- Выпады вперёд – 3x10 на каждую ногу\n- Приседания с прыжком – 3x10\n- Ягодичный мостик – 3x15\n- Кардио (быстрая ходьба/бег) – 15–20 минут\n\nДень 6–7 – Отдых\n\n*Советы:*\n- Начинайте с малого, следите за техникой.\n- Постепенно увеличивайте нагрузку.\n- Пейте воду и не забывайте про восстановление.\n\nПеред началом любых тренировок желательно проконсультироваться с врачом, особенно если есть хронические заболевания.",
+        "model": "Claude",
+        "type": "text",
+        "tags": [
+            "фитнес",
+            "зал",
+            "здоровье"
+        ],
+        "resultUrl": "",
+        "deeplink": "https://claude.ai"
+    },
+    {
+        "id": "4",
+        "title": "React компонент: кнопка",
+        "prompt": "Write a reusable React component for a styled button with hover effects.",
+        "model": "GPT-4",
+        "type": "code",
+        "tags": [
+            "react",
+            "button",
+            "frontend"
+        ],
+        "resultUrl": "",
+        "deeplink": "https://chat.openai.com/chat?model=gpt-4"
+    },
+    {
+        "id": "5",
+        "title": "Милый кот с бабочками",
+        "prompt": "A cute cat sitting in a garden with butterflies flying around, pastel color palette.",
+        "model": "DALL·E",
+        "type": "image",
+        "tags": [
+            "cat",
+            "garden",
+            "cute"
+        ],
+        "resultUrl": "/src/public/images/cat.jpg",
+        "deeplink": "https://openai.com/dall-e"
+    },
+    {
+        "id": "6",
+        "title": "Сценарий собеседования на разработчика",
+        "prompt": "Придумай примерный диалог собеседования на позицию frontend-разработчика.",
+        "model": "GPT-4",
+        "type": "text",
+        "resultText": "Сценарий собеседования на позицию разработчика (Junior/Middle):\n\n1. Приветствие и знакомство (5 минут):\n- Представление себя и компании\n- Краткий рассказ кандидата о себе\n\n2. Общие вопросы (10 минут):\n- Почему выбрали разработку?\n- Что вам больше всего нравится в программировании?\n- Какой проект был для вас самым интересным и почему?\n\n3. Технический блок (20–30 минут):\n- Что такое замыкание в JavaScript?\n- Разница между var, let и const\n- Что такое event loop и как работает call stack?\n- Объясните работу async/await\n- В чём разница между SPA и MPA?\n- Что такое REST API? Как с ним работать на фронтенде?\n- Задача на алгоритм: написать функцию, которая возвращает уникальные элементы массива\n\n4. Практическое задание (по возможности):\n- Маленькое тестовое: сверстать простую карточку, реализовать кнопку с логикой\n  (например: кнопка «лайк», считающая количество нажатий)\n\n5. Вопросы по софт-скиллам (5–10 минут):\n- Как вы обычно решаете конфликт в команде?\n- Что вы делаете, если не понимаете задачу?\n- Как планируете своё обучение?\n\n6. Вопросы от кандидата (5 минут):\n- Предоставить возможность задать вопросы о команде, проекте, процессах\n\n7. Завершение:\n- Расскажите о следующих шагах (когда ждать ответа, будет ли техническое задание и т.д.)\n- Поблагодарить за участие\n\n*Примечание:* Структура может быть адаптирована под уровень кандидата и формат интервью (онлайн/оффлайн).",
+        "tags": [
+            "работа",
+            "frontend",
+            "собеседование"
+        ],
+        "resultUrl": "",
+        "deeplink": "https://chat.openai.com/chat?model=gpt-4"
+    },
+    {
+        "id": "7",
+        "title": "Фэнтези лес в тумане",
+        "prompt": "A mystical fantasy forest in the fog, glowing mushrooms and floating lights.",
+        "model": "Midjourney",
+        "type": "image",
+        "tags": [
+            "fantasy",
+            "forest",
+            "fog"
+        ],
+        "resultUrl": "/src/public/images/fantasy-forest.jpg",
+        "deeplink": "https://midjourney.com/app"
+    },
+    {
+        "id": "8",
+        "title": "Резюме для junior frontend",
+        "prompt": "Напиши краткое и современное резюме для junior frontend разработчика.",
+        "model": "GPT-4",
+        "resultText": "Имя: Иван Иванов\nEmail: ivan.ivanov@example.com\nТелефон: +7 (999) 123-45-67\nGitHub: https://github.com/ivanivanov\nLinkedIn: https://www.linkedin.com/in/ivanivanov\n\nЦель:\nНачинающий Frontend-разработчик, заинтересованный в создании удобных и красивых интерфейсов. Ищу возможность применять и развивать навыки в современных веб-технологиях в команде единомышленников.\n\nНавыки:\n- HTML5, CSS3, JavaScript (ES6+)\n- Адаптивная и кроссбраузерная вёрстка\n- React, базовые знания Vue/Svelte\n- REST API, Fetch/Axios\n- Git, GitHub\n- npm, Webpack, Vite\n- Базовые знания Figma, понимание UI/UX\n\nОпыт работы:\nПроекты (Pet-проекты):\n1. Todo-приложение (React + localStorage)\n   - Функции: добавление/удаление задач, фильтрация, сохранение состояния\n   - GitHub: https://github.com/ivanivanov/todo-app\n\n2. Лэндинг кофейни (HTML + CSS + JS)\n   - Адаптивная верстка, плавная анимация, форма обратной связи\n   - Деплой: https://coffeelanding.vercel.app\n\nОбразование:\n- Курс \"Frontend-разработка\" — Яндекс.Практикум / Hexlet / Stepik (указать актуальное)\n- Университет / Колледж (если релевантно)\n\nДополнительно:\n- Уровень английского: B1 (читаю документацию, могу поддержать разговор)\n- Быстро обучаюсь, открыт к новым технологиям, люблю чистый и понятный код\n\nГотов работать удалённо или в офисе. Рассмотрю стажировки и junior-позиции.",
+        "type": "text",
+        "tags": [
+            "резюме",
+            "frontend",
+            "junior"
+        ],
+        "resultUrl": "",
+        "deeplink": "https://chat.openai.com/chat?model=gpt-4"
+    },
+    {
+        "id": "9",
+        "title": "CSS карточка с тенью",
+        "prompt": "Create a CSS card layout with soft shadow and hover effect.",
+        "model": "GPT-4",
+        "type": "code",
+        "tags": [
+            "css",
+            "ui",
+            "hover"
+        ],
+        "resultUrl": "",
+        "deeplink": "https://chat.openai.com/chat?model=gpt-4"
+    },
+    {
+        "id": "10",
+        "title": "Комикс в стиле Studio Ghibli",
+        "prompt": "A comic panel in the art style of Studio Ghibli, featuring a flying city.",
+        "model": "Midjourney",
+        "type": "image",
+        "tags": [
+            "ghibli",
+            "comic",
+            "city"
+        ],
+        "resultUrl": "/src/public/images/ghibli-city.jpg",
+        "deeplink": "https://midjourney.com/app"
+    }
+]
