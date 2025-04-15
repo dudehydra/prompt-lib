@@ -10,7 +10,7 @@
             "cafe",
             "cozy"
         ],
-        "resultUrl": "/src/public/images/cafe.jpg",
+        "resultUrl": "/static/images/cafe.jpg",
         "deeplink": "https://midjourney.com/app"
     },
     {
@@ -68,7 +68,7 @@
             "garden",
             "cute"
         ],
-        "resultUrl": "/src/public/images/cat.jpg",
+        "resultUrl": "/static/images/cat.jpg",
         "deeplink": "https://openai.com/dall-e"
     },
     {
@@ -97,7 +97,7 @@
             "forest",
             "fog"
         ],
-        "resultUrl": "/src/public/images/fantasy-forest.jpg",
+        "resultUrl": "/static/images/fantasy-forest.jpg",
         "deeplink": "https://midjourney.com/app"
     },
     {
@@ -140,7 +140,7 @@
             "comic",
             "city"
         ],
-        "resultUrl": "/src/public/images/ghibli-city.jpg",
+        "resultUrl": "/static/images/ghibli-city.jpg",
         "deeplink": "https://midjourney.com/app"
     }
 ]
