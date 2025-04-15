@@ -1,7 +1,7 @@
 <script>
   import { base } from "$app/paths";
   export let data;
-  const imagePath = `${base}${data.resultUrl}`;
+  const imagePath = `/${data.resultUrl}`;
 </script>
 
 <div

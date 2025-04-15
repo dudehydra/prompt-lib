@@ -2,7 +2,7 @@
     import { base } from "$app/paths";
     export let data;
     const { prompt } = data;
-    const imagePath = `${base}${prompt.resultUrl}`;
+    const imagePath = `/${prompt.resultUrl}`;
 </script>
 
 <svelte:head>
