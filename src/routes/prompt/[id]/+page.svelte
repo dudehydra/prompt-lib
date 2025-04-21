@@ -2,7 +2,7 @@
     import { base } from "$app/paths";
     export let data;
     const { prompt } = data;
-    const imagePath = `/${prompt.resultUrl}`;
+    const imagePath = `${prompt.result_url}`;
 </script>
 
 <svelte:head>
@@ -27,17 +27,17 @@
 
     <div class="bg-gray-100 rounded-lg p-4 mb-6">
         <h2 class="text-lg font-semibold mb-2">Промпт</h2>
-        <pre class="whitespace-pre-wrap">{prompt.prompt}</pre>
+        <pre class="whitespace-pre-wrap">{prompt.input}</pre>
     </div>
 
-    {#if prompt.type === "text" && prompt.resultText}
+    {#if prompt.type === "text" && prompt.result_text}
         <div class="bg-gray-100 rounded-lg p-4 mb-6">
             <h2 class="text-lg font-semibold mb-2">Результат</h2>
-            <pre class="whitespace-pre-wrap">{prompt.resultText}</pre>
+            <pre class="whitespace-pre-wrap">{prompt.result_text}</pre>
         </div>
     {/if}
 
-    {#if prompt.type === "image" && prompt.resultUrl}
+    {#if prompt.type === "image" && prompt.result_url}
         <img
             src={imagePath}
             alt={prompt.title}
@@ -53,7 +53,7 @@
 
     <div class="flex gap-3">
         <button
-            on:click={() => navigator.clipboard.writeText(prompt.prompt)}
+            on:click={() => navigator.clipboard.writeText(prompt.input)}
             class="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 text-sm"
         >
             📋 Копировать промпт
