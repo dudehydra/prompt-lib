@@ -15,20 +15,21 @@
     }
     onMount(async () => {
         const { data } = await supabase.auth.getUser();
-        user.set(data.user);
+        user.user = data.user;
 
         // Подписка на изменения авторизации
         supabase.auth.onAuthStateChange((_event, session) => {
-            user.set(session?.user || null);
+            user.user = session?.user || null;
         });
     });
 </script>
 
 <header class="flex gap-4 flex-row-reverse m-2">
-    {#if $user}
+    {#if user.user}
         <button on:click={handleLogout} class="text-red-600 underline"
             >Выйти</button
         >
+        <a href={`/profile`} class="text-red-600 underline">Профиль </a>
     {:else}
         <div class="flex gap-4">
             <button

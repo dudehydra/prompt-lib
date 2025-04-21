@@ -22,7 +22,7 @@
         });
         if (err) throw err;
         else {
-          user.set(data.user);
+          user.user = data.user;
         }
       } else if ($authMode === "register") {
         const { error: err, data } = await supabase.auth.signUp({

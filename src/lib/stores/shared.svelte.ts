@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store'
 import type { User } from '@supabase/supabase-js'
 
-export const user = writable<User | null>(null)
+export let user = $state<{user: User | null}>({user: null})
 export const promts = $state<{ list: any[] }>({ list: [] })
