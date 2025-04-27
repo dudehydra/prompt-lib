@@ -61,7 +61,7 @@
             input: prompt,
             model,
             type,
-            tags: tags.split(",").map((t) => t.trim()),
+            tags: tags.split(",").map((t) => t.trim().toLowerCase()),
             deeplink,
             result_text: resultText,
             result_url: resultUrl,

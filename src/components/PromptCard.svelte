@@ -1,9 +1,39 @@
 <script>
+  import {
+    getSavedPromptsForCurrentUser,
+    savePrompt,
+    unsavePrompt,
+  } from "$lib/api/prompts";
+  import { delteModalData, delteModalOpen } from "$lib/stores/modal";
+  import { savedPromts, user } from "$lib/stores/shared.svelte";
+  import { fade } from "svelte/transition";
   export let data;
+  export let isSaved = false;
+
+  async function toggleSave() {
+    if (!user.user) return;
+
+    if (isSaved) {
+      await unsavePrompt(data.id, user.user.id);
+
+      const promts = await getSavedPromptsForCurrentUser();
+      savedPromts.set(promts);
+    } else {
+      await savePrompt(data.id, user.user.id);
+    }
+
+    isSaved = !isSaved;
+  }
+
+  function askDelete() {
+    delteModalData.set(data);
+    delteModalOpen.set(true);
+  }
 </script>
 
 <div
   class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition flex flex-col justify-between"
+  transition:fade={{ duration: 300 }}
 >
   <div class="card__header mb-4">
     <a href={`/prompt/${data.id}`} class="block">
@@ -50,6 +80,19 @@
           🚀 Открыть
         </a>
       {/if}
+      <button on:click={toggleSave}>
+        {#if isSaved}
+          💾 Сохранено
+        {:else}
+          💾 Сохранить
+        {/if}
+      </button>
+      <button
+        class="text-red-600 hover:text-red-800 transition"
+        on:click={() => askDelete()}
+      >
+        🗑
+      </button>
     </div>
   </div>
 </div>
