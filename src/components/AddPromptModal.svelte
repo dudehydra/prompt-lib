@@ -142,7 +142,10 @@
                 <input
                     type="file"
                     class="w-full border p-2 rounded"
-                    on:change={(e) => (imageFile = e.target.files[0])}
+                    on:change={(e) => {
+                        let file = (e.target as HTMLInputElement).files;
+                        if (file) imageFile = file[0];
+                    }}
                 />
                 {#if resultUrl}
                     <img

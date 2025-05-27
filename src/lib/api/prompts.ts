@@ -1,6 +1,7 @@
+import type { Iprompt } from '$lib/stores/shared.svelte'
 import { supabase } from '$lib/supabaseClient'
 
-export async function getUserPrompts(userId: string) {
+export async function getUserPrompts(userId: string): Promise<Iprompt[]> {
     const { data, error } = await supabase
         .from('prompts')
         .select('*')
@@ -10,7 +11,7 @@ export async function getUserPrompts(userId: string) {
     return data
 }
 
-export async function getPrompts() {
+export async function getPrompts(): Promise<Iprompt[]> {
     const { data, error } = await supabase
         .from('prompts')
         .select('*')
@@ -18,7 +19,7 @@ export async function getPrompts() {
     if (error) throw error
     return data
 }
-export async function getPromptById(id: string) {
+export async function getPromptById(id: string): Promise<Iprompt> {
     const { data, error } = await supabase
         .from('prompts')
         .select('*')
@@ -48,7 +49,7 @@ export async function deletePromptById(id: string, resultUrl: string, type: stri
     return true
 }
 
-export async function getPromptsByTags(tags: string[]) {
+export async function getPromptsByTags(tags: string[]): Promise<Iprompt[]> {
     let query = supabase.from("prompts").select("*").order("created_at", { ascending: false });
 
     if (tags.length > 0) {
@@ -61,15 +62,14 @@ export async function getPromptsByTags(tags: string[]) {
     return data;
 }
 
-// lib/supabase/saved.ts
-export async function getSavedPromptsForCurrentUser() {
+export async function getSavedPromptsForCurrentUser(): Promise<Iprompt[]> {
     const { data, error } = await supabase
         .from("saved_prompts")
         .select("prompt:prompt_id(*)")
         .order("created_at", { ascending: false });
 
     if (error) throw error;
-    return data.map(row => row.prompt);
+    return data.map(row => row.prompt) as unknown as Iprompt[];
 }
 
 export async function unsavePrompt(prompt_id: string, user_id: string) {

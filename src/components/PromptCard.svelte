@@ -1,33 +1,33 @@
-<script>
+<script lang="ts">
   import {
     getSavedPromptsForCurrentUser,
     savePrompt,
     unsavePrompt,
   } from "$lib/api/prompts";
-  import { delteModalData, delteModalOpen } from "$lib/stores/modal";
-  import { savedPromts, user } from "$lib/stores/shared.svelte";
+  import { deleteModalData, deleteModalOpen } from "$lib/stores/modal";
+  import { savedPrompts, user, type Iprompt } from "$lib/stores/shared.svelte";
   import { fade } from "svelte/transition";
-  export let data;
+  export let data: Iprompt;
   export let isSaved = false;
 
   async function toggleSave() {
-    if (!user.user) return;
+    if (!$user) return;
 
     if (isSaved) {
-      await unsavePrompt(data.id, user.user.id);
+      await unsavePrompt(data.id, $user.id);
 
       const promts = await getSavedPromptsForCurrentUser();
-      savedPromts.set(promts);
+      savedPrompts.set(promts);
     } else {
-      await savePrompt(data.id, user.user.id);
+      await savePrompt(data.id, $user.id);
     }
 
     isSaved = !isSaved;
   }
 
   function askDelete() {
-    delteModalData.set(data);
-    delteModalOpen.set(true);
+    deleteModalData.set(data);
+    deleteModalOpen.set(true);
   }
 </script>
 
@@ -38,7 +38,7 @@
   <div class="card__header mb-4">
     <a href={`/prompt/${data.id}`} class="block">
       <h2 class="text-lg font-semibold">{data.title}</h2>
-      <p class="text-sm text-gray-600 line-clamp-2">{data.prompt}</p>
+      <p class="text-sm text-gray-600 line-clamp-2">{data.input}</p>
     </a>
     <p class="text-xs text-gray-400 mt-1 mb-2">🔘 {data.model}</p>
     <div class="flex space-x-2 items-center w-full">
@@ -66,7 +66,7 @@
   <div class="card__footer">
     <div class="mt-2 flex gap-2 text-sm">
       <button
-        on:click={() => navigator.clipboard.writeText(data.prompt)}
+        on:click={() => navigator.clipboard.writeText(data.input)}
         class="bg-gray-100 px-2 py-1 rounded hover:bg-gray-200"
       >
         📋 Копировать

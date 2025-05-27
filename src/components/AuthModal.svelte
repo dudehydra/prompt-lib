@@ -2,7 +2,6 @@
   import { authModalOpen, authMode, closeAuth } from "$lib/stores/modal";
   import { supabase } from "$lib/supabaseClient";
   import { user } from "$lib/stores/shared.svelte";
-  import { onMount } from "svelte";
   import { goto } from "$app/navigation";
 
   let email = "";
@@ -22,7 +21,7 @@
         });
         if (err) throw err;
         else {
-          user.user = data.user;
+          user.set(data.user);
         }
       } else if ($authMode === "register") {
         const { error: err, data } = await supabase.auth.signUp({
@@ -33,7 +32,7 @@
       }
       closeAuth();
       goto("/");
-    } catch (e) {
+    } catch (e: any) {
       error = e.message;
     }
   }

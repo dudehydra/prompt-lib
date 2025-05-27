@@ -3,11 +3,9 @@ import { user } from '$lib/stores/shared.svelte'
 
 export async function load() {
 
-    if (!user.user) {
+    if (!user) {
         throw redirect(302, '/')
     }
 
-    return {
-        user: user.user
-    }
+    return user
 }

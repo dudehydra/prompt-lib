@@ -1,6 +1,6 @@
 <script lang="ts">
   import { deletePromptById, getUserPrompts } from "$lib/api/prompts";
-  import { delteModalData, delteModalOpen } from "$lib/stores/modal";
+  import { deleteModalData, deleteModalOpen } from "$lib/stores/modal";
   import { promts, user } from "$lib/stores/shared.svelte";
   import { get } from "svelte/store";
 
@@ -9,26 +9,26 @@
   export let description = "Это действие нельзя отменить.";
 
   async function confirmDelete() {
-    if ($delteModalData) {
-      let test = get(delteModalData);
+    if ($deleteModalData) {
+      let test = get(deleteModalData);
       const success = await deletePromptById(
-        $delteModalData.id,
-        $delteModalData.resultUrl,
-        $delteModalData.type,
+        $deleteModalData.id,
+        $deleteModalData.result_url || "",
+        $deleteModalData.type,
       );
-      if (success) {
-        delteModalOpen.set(false);
-        const newPromts = await getUserPrompts(user.user.id);
-        promts.list = newPromts;
+      if (success && $user) {
+        deleteModalOpen.set(false);
+        const newPrompts = await getUserPrompts($user.id);
+        promts.list = newPrompts;
       } else {
         alert("Ошибка удаления");
-        delteModalOpen.set(false);
+        deleteModalOpen.set(false);
       }
     }
   }
 </script>
 
-{#if $delteModalOpen}
+{#if $deleteModalOpen}
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
     <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
       <h2 class="text-xl font-bold mb-2">{title}</h2>
@@ -36,7 +36,7 @@
       <div class="flex justify-end gap-2">
         <button
           class="px-4 py-2 rounded bg-gray-100 text-gray-700 hover:bg-gray-200"
-          on:click={() => delteModalOpen.set(false)}
+          on:click={() => deleteModalOpen.set(false)}
         >
           Отмена
         </button>
